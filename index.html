@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+        }
+        .box {
+            width: 278px;
+            height: 180px;
+            border: 1px solid #D2E1F1;
+            margin: 50px auto;
+        }
+        h2 {
+            height: 34px;
+            padding-left: 15px;
+            font: 700 14px/34px "宋体";
+            color: #0873C0;
+        }
+        .content {
+            padding: 0 15px;
+        }
+        .con-top {
+            overflow: hidden;
+        }
+        .left {
+            width: 50px;
+            height: 50px;
+            background: url(images/Icon.png) no-repeat 0 0;
+            float: left;
+        }
+        .right {
+            float: right;
+        }
+        .r-bottom {
+            margin-top:6px;
+        }
+        .icon {
+            height: 13px;
+            width: 80px;
+            background: url(images/yunshi.png) no-repeat top left;
+            float: left;
+            margin-top: 2px;
+            position: relative;
+        }
+        .r-bottom span {
+            float: left;
+        }
+        .icon2 {
+            height: 13px;
+            width: 64px;
+            background: url(images/yunshi.png) no-repeat bottom left;
+            position: absolute;
+            overflow: hidden;
+        }
+        .con-bottom {
+            margin-top: 15px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            function $(id) { return document.getElementById(id)}
+            var sele = document.getElementById("sele");
+            var yunshi = [8,7,4,8,7,9,9,10,9,5,9,10]
+            var cont = ["今天的白羊容易受到事业发展上带来的压力，今天特别适合和朋友出去娱乐一下，容易结实不错的朋友...[详细]","事业上的压力增大，牛牛们想给自己放个小假，其实出去玩玩也不错的，说不定就遇到助力事业发展的...[详细]","今天的压力突然又大了起来，双子近期也想更深入关于专业领域的研究，但同时来自于家庭的压力也不...[详细]","今天的巨蟹容易咨询关于投资方面的问题，尤其是牵扯到合作利益的投资，本身这也是巨蟹一直不擅长...[详细]","今天的狮子多少容易为钱财的事情伤脑筋，用于员工工作支出或者常规工作开销的部分，用于走关系拜...[详细]","今天压抑的心到到达极点，工作上总难免遇到小人，但是你要知道关键是我们要怎么面对小人，该行使...[详细]","今天的天秤不太愿意跟人太多接触和交流，总感觉心理隐约的不舒心，让自己到花园或者绿地走走吧，...[详细]","今天的天蝎做各种事情总会受到一些阻碍，不适宜做和人打交道的事务，另外，出行也要谨慎，耐心一...[详细]","今天射手很容易在事情上出现纰漏，各类事务或文件都要检查清楚，不要因为一时疏忽带来麻烦。今天...[详细]","今天会有很多赚钱的想法冒出来，也有很多机会财务入账的机会，不过不太适合做长期的打算。如果想...[详细]","今天的水瓶容易犯小人的，遇事反应一定要快，对方有问题时一定要马上指出，占住先机。另外，不宜...[详细]","今天的鱼鱼在和他人交往的过程中容易发生不愉快的事情，要注意提防朋友圈的小人，虽然鱼鱼自身不...[详细]"]
+            sele.onchange = function () {
+                $("left-icon").style.backgroundPosition = "0 "+ (-this.value*50) +"px";
+                $("icon_2").style.width = yunshi[this.value]*8+"px";
+                $("con_bottom").innerHTML = cont[this.value];
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="box">
+    <h2>星座运势</h2>
+    <div class="content">
+        <div class="con-top">
+            <div class="left" id="left-icon"></div>
+            <div class="right">
+                <div class="r-top">
+                    <select name="" id="sele">
+                        <option value="0">白羊座（03.21-04.19）</option>
+                        <option value="1">金牛座（04.20-05.20）</option>
+                        <option value="2">双子座（05.21-06.21）</option>
+                        <option value="3">巨蟹座（06.22-07.22）</option>
+                        <option value="4">狮子座（07.23-08.22）</option>
+                        <option value="5">处女座（08.23-09.22）</option>
+                        <option value="6">天秤座（09.23-10.23）</option>
+                        <option value="7">天蝎座（10.24-11.22）</option>
+                        <option value="8">射手座（11.23-12.21）</option>
+                        <option value="9">摩羯座（12.22-01.19）</option>
+                        <option value="10">水瓶座（01.20-02.18）</option>
+                        <option value="11">双鱼座（02.19-03.20）</option>
+                    </select>
+                </div>
+                <div class="r-bottom">
+                    <span>今日运势 ：</span>
+                    <div class="icon">
+                        <div class="icon2" id="icon_2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="con-bottom" id="con_bottom">
+            今天的白羊容易受到事业发展上带来的压力，今天特别适合和朋友出去娱乐一下，容易结实不错的朋友...[详细]
+        </div>
+    </div>
+</div>
+</body>
+</html>
